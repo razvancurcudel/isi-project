@@ -47,4 +47,9 @@ class User extends Authenticatable implements JWTSubject
     {
         return [];
     }
+
+    public function ngo()
+    {
+        return $this->belongsTo('App\Ngo');
+    }
 }
