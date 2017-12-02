@@ -23,7 +23,8 @@ class SensorsTableSeeder extends Seeder
                 "salinity" => 0.1,
                 "turbidity" => 15.1,
                 "tds" => 144,
-                "gh" => 19.1
+                "gh" => 19.1,
+                "identifier" => 1
             ],
             [
                 "collection_point" => "Paraul Berevoi",
@@ -35,7 +36,8 @@ class SensorsTableSeeder extends Seeder
                 "salinity" => 0.1,
                 "turbidity" => 0.07,
                 "tds" => 61,
-                "gh" => 13.2
+                "gh" => 13.2,
+                "identifier" => 2
             ],
             [
                 "collection_point" => "Paraul Beclean",
@@ -47,7 +49,8 @@ class SensorsTableSeeder extends Seeder
                 "salinity" => 0,
                 "turbidity" => 0.4,
                 "tds" => 46,
-                "gh" => 12.1
+                "gh" => 12.1,
+                "identifier" => 3
             ],
             [
                 "collection_point" => "Hidrocentrala Voila",
@@ -59,7 +62,8 @@ class SensorsTableSeeder extends Seeder
                 "salinity" => 0.1,
                 "turbidity" => 5.7,
                 "tds" => 147,
-                "gh" => 19.7
+                "gh" => 19.7,
+                "identifier" => 4
             ],
             [
                 "collection_point" => "Paraul Voila",
@@ -71,7 +75,8 @@ class SensorsTableSeeder extends Seeder
                 "salinity" => 0.1,
                 "turbidity" => 5.39,
                 "tds" => 51,
-                "gh" => 11.8
+                "gh" => 11.8,
+                "identifier" => 5
             ],
             [
                 "collection_point" => "Paraul Sambata",
@@ -83,7 +88,8 @@ class SensorsTableSeeder extends Seeder
                 "salinity" => 0.1,
                 "turbidity" => 5.39,
                 "tds" => 51,
-                "gh" => 11.8
+                "gh" => 11.8,
+                "identifier" => 6
             ],
             [
                 "collection_point" => "Paraul Oltet",
@@ -95,7 +101,8 @@ class SensorsTableSeeder extends Seeder
                 "salinity" => 0,
                 "turbidity" => 0.28,
                 "tds" => 48,
-                "gh" => 11.4
+                "gh" => 11.4,
+                "identifier" => 7
             ]/*,
             [
                 "collection_point" => ,

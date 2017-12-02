@@ -52,10 +52,12 @@ class ModifySensorsData extends Command
      */
     public function handle()
     {
-        $sensorsCount = DB::table("sensors")->count();
+        $sensorsMaxIdentifier = DB::table("sensors")->max("identifier");
 
-        $sensorId = rand(1, $sensorsCount);
-        $sensor = Sensor::find($sensorId);
+        $sensorIdentifier = rand(1, $sensorsMaxIdentifier);
+        $sensor = Sensor::where("identifier", "=", $sensorIdentifier)->orderBy("update_timestamp", "DESC")->first();
+
+        $sensor = $sensor->replicate();
 
         $paramToModify = array_keys($this->limits)[rand(0, count($this->limits) - 1)];
         $sign = rand(1, 2) == 1 ? "+" : "-";
