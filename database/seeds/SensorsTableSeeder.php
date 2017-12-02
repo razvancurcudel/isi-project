@@ -27,7 +27,7 @@ class SensorsTableSeeder extends Seeder
                 "identifier" => 1
             ],
             [
-                "collection_point" => "Paraul Berevoi",
+                "collection_point" => "Paraul Berivoi",
                 "lat" => 45.83003,
                 "long" => 24.96581,
                 "nitrate" => 15,
@@ -73,9 +73,9 @@ class SensorsTableSeeder extends Seeder
                 "ph" => 6.24,
                 "conductivity" => 118.1,
                 "salinity" => 0.1,
-                "turbidity" => 5.39,
-                "tds" => 51,
-                "gh" => 11.8,
+                "turbidity" => 0,
+                "tds" => 56,
+                "gh" => 12.3,
                 "identifier" => 5
             ],
             [
@@ -93,7 +93,7 @@ class SensorsTableSeeder extends Seeder
             ],
             [
                 "collection_point" => "Paraul Oltet",
-                "lat" => 45.76312,
+                "lat" => 45.79198,
                 "long" => 24.77175,
                 "nitrate" => 30.5,
                 "ph" => 7.23,
@@ -103,67 +103,72 @@ class SensorsTableSeeder extends Seeder
                 "tds" => 48,
                 "gh" => 11.4,
                 "identifier" => 7
-            ]/*,
-            [
-                "collection_point" => ,
-                "lat" => ,
-                "long" => ,
-                "nitrate" => ,
-                "ph" => ,
-                "conductivity" => ,
-                "salinity" => ,
-                "turbidity" => ,
-                "tds" => ,
-                "gh" =>
             ],
             [
-                "collection_point" => ,
-                "lat" => ,
-                "long" => ,
-                "nitrate" => ,
-                "ph" => ,
-                "conductivity" => ,
-                "salinity" => ,
-                "turbidity" => ,
-                "tds" => ,
-                "gh" =>
+                "collection_point" => "Hidrocentrala Vistea",
+                "lat" => 45.80674,
+                "long" => 24.75552,
+                "nitrate" => 35.2,
+                "ph" => 7.52,
+                "conductivity" => 329,
+                "salinity" => 0.2,
+                "turbidity" => 14.42,
+                "tds" => 157,
+                "gh" => 19.7,
+                "identifier" => 8
             ],
             [
-                "collection_point" => ,
-                "lat" => ,
-                "long" => ,
-                "nitrate" => ,
-                "ph" => ,
-                "conductivity" => ,
-                "salinity" => ,
-                "turbidity" => ,
-                "tds" => ,
-                "gh" =>
+                "collection_point" => "Paraul Corbul Ucii",
+                "lat" => 45.73933,
+                "long" => 24.69223,
+                "nitrate" => 46.7,
+                "ph" => 7.68,
+                "conductivity" => 348.2,
+                "salinity" => 0.2,
+                "turbidity" => 11.24,
+                "tds" => 170,
+                "gh" => 18.7,
+                "identifier" => 9
             ],
             [
-                "collection_point" => ,
-                "lat" => ,
-                "long" => ,
-                "nitrate" => ,
-                "ph" => ,
-                "conductivity" => ,
-                "salinity" => ,
-                "turbidity" => ,
-                "tds" => ,
-                "gh" =>
+                "collection_point" => "Paraul Ucea",
+                "lat" => 45.76570,
+                "long" => 24.66189,
+                "nitrate" => 21.3,
+                "ph" => 6.78,
+                "conductivity" => 78.8,
+                "salinity" => 0,
+                "turbidity" => 0,
+                "tds" => 37,
+                "gh" => 12.1,
+                "identifier" => 10
             ],
             [
-            "collection_point" => ,
-                "lat" => ,
-                "long" => ,
-                "nitrate" => ,
-                "ph" => ,
-                "conductivity" => ,
-                "salinity" => ,
-                "turbidity" => ,
-                "tds" => ,
-                "gh" =>
-            ],*/
+                "collection_point" => "Paraul Ghirlotel-Arpas",
+                "lat" => 45.79865,
+                "long" => 24.65744,
+                "nitrate" => 23.03,
+                "ph" => 6.23,
+                "conductivity" => 75,
+                "salinity" => 0,
+                "turbidity" => 0,
+                "tds" => 35,
+                "gh" => 11.8,
+                "identifier" => 11
+            ],
+            [
+            "collection_point" => "Hidrocentrala Arpas",
+                "lat" => 45.79518,
+                "long" => 24.59633,
+                "nitrate" => 36.44,
+                "ph" => 7.1,
+                "conductivity" => 345,
+                "salinity" => 0.2,
+                "turbidity" => 11.07,
+                "tds" => 164,
+                "gh" => 20.1,
+                "identifier" => 12
+            ]
         ]);
     }
 }
