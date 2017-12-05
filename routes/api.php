@@ -41,7 +41,10 @@ Route::group([
     Route::get('alerts', '\App\Http\Controllers\AlertsController@index');
     Route::post('alerts/create', '\App\Http\Controllers\AlertsController@create');
     Route::get('sensors/{id}', '\App\Http\Controllers\SensorsController@show');
-    Route::get('sensors', '\App\Http\Controllers\SensorsController@index');
+	Route::get('sensors', '\App\Http\Controllers\SensorsController@index');
+	Route::get('ngos', function () {
+		return \App\Ngo::all(["id", "name"]);
+	});
 
 });
 
