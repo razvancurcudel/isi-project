@@ -12,11 +12,13 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-         $this->call(SensorsTableSeeder::class);
-//        DB::table("users")->insert([
-//            'name' => "razvan",
-//            "email" => "razvan@gmail.com",
-//            "password" => bcrypt("secret")
-//        ]);
+        $this->call(SensorsTableSeeder::class);
+        $this->call(NgosTableSeeder::class);
+        DB::table("users")->insert([
+            'name' => "user",
+            "email" => "user@gmail.com",
+            "password" => bcrypt("secret"),
+            "ngo_id" => 1
+        ]);
     }
 }

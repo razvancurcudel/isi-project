@@ -19,11 +19,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-
-Route::get('/test', function (Request $request) {
-	return Mail::to("razvan.curcudel@gmail.com")->send(new TestMail());
-});
-
 Route::group(['prefix' => 'auth'], function () {
 
     Route::post('login', '\App\Http\Controllers\AuthController@login');
@@ -47,4 +42,3 @@ Route::group([
 	});
 
 });
-

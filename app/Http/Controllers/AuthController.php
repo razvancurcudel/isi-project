@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 
 use App\User;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -97,15 +98,24 @@ class AuthController extends Controller
 
     public function createUser(Request $request)
     {
-        $user = new User();
+        try
+        {
+            User::where('email', $request->get('email'))->firstOrFail();
 
-        $user->name = $request->get("name");
-        $user->email = $request->get("email");
-        $user->password = bcrypt($request->get("password"));
-        $user->ngo_id = (int)$request->get("ngo");
+            return response()->json("Email already exists", 500);
+        }
+        catch (ModelNotFoundException $exc)
+        {
+            $user = new User();
 
-        $user->save();
+            $user->name = $request->get("name");
+            $user->email = $request->get("email");
+            $user->password = bcrypt($request->get("password"));
+            $user->ngo_id = (int)$request->get("ngo");
 
-        return response()->json("User created succesfully");
+            $user->save();
+
+            return response()->json("User created succesfully");
+        }
     }
 }
