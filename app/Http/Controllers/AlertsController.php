@@ -21,9 +21,9 @@ class AlertsController extends Controller
         $alert->long = $request->get("long");
         $alert->lat = $request->get("lat");
         $alert->description = $request->get("description");
-        $alert->start_timestamp = Carbon::createFromTimestamp($request->get("start_timestamp"))->toDateTimeString();
-        $alert->end_timestamp = Carbon::createFromTimestamp($request->get("end_timestamp"))->toDateTimeString();
-
+        $alert->start_timestamp = Carbon::createFromTimestamp(strtotime($request->get("start_timestamp")));
+        $alert->end_timestamp = Carbon::createFromTimestamp(strtotime($request->get("end_timestamp")));
+        
         $alert->save();
 
         // send mail to all users
