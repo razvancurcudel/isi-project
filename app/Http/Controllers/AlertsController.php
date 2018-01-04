@@ -20,12 +20,13 @@ class AlertsController extends Controller
         $alert->user_id = JWTAuth::parseToken()->toUser()->id;
         $alert->long = $request->get("long");
         $alert->lat = $request->get("lat");
-        $alert->description = $request->get("description");
-        $alert->start_timestamp = Carbon::createFromTimestamp(strtotime($request->get("start_timestamp")));
-        $alert->end_timestamp = Carbon::createFromTimestamp(strtotime($request->get("end_timestamp")));
-        
+		$alert->description = $request->get("description");
+		$currentTime = Carbon::now();
+        $alert->start_timestamp = $currentTime->format('Y-m-d H:i:s');
+        $alert->end_timestamp = $currentTime->addHours((int)$request->get('duration'))->format('Y-m-d H:i:s');
+		
         $alert->save();
-
+		
         // send mail to all users
         $usersToNotify = User::where("email", "!=", $alert->user->email)->pluck("email")->toArray();
         foreach($usersToNotify as $email)
