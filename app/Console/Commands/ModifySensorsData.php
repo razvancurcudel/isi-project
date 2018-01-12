@@ -63,12 +63,16 @@ class ModifySensorsData extends Command
         $sign = rand(1, 2) == 1 ? "+" : "-";
         $limit = $this->limits[$paramToModify];
 
+		$oldValue = $sensor[$paramToModify];
         if ($sign === "+") {
             $sensor[$paramToModify] += $this->random_float($limit[0], $limit[1]);
         } else {
             $sensor[$paramToModify] -= $this->random_float($limit[0], $limit[1]);
             $sensor[$paramToModify] = $sensor[$paramToModify] > 0 ? $sensor[$paramToModify] : 0;
-        }
+		}
+		$newValue = $sensor[$paramToModify];
+
+		$this->info($paramToModify . " modified on sensor " . $sensor->identifier . ". Old value: " . $oldValue . ". New value " . $newValue);
 
         $sensor->update_timestamp = Carbon::now();
         $sensor->save();
