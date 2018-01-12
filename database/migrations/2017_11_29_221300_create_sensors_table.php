@@ -14,9 +14,9 @@ class CreateSensorsTable extends Migration
     public function up()
     {
         Schema::create('sensors', function (Blueprint $table) {
-			$table->increments('id');
-			$table->integer("identifier");
-			$table->string("collection_point");
+            $table->increments('id');
+            $table->integer("identifier");
+            $table->string("collection_point");
             $table->float('long', 8, 5);
             $table->float('lat', 8, 5);
             $table->float('nitrate', 5, 2);
@@ -25,7 +25,8 @@ class CreateSensorsTable extends Migration
             $table->float('salinity', 5, 2);
             $table->float('turbidity', 5, 2);
             $table->float('tds', 5, 2);
-            $table->float('gh', 5, 2);
+			$table->float('gh', 5, 2);
+            $table->timestamp("update_timestamp")->nullable();
         });
     }
 
