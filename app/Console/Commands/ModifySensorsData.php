@@ -31,7 +31,7 @@ class ModifySensorsData extends Command
         "ph" => [0.1, 1],
         "conductivity" => [1, 70],
         "turbidity" => [0.2, 8],
-        "tds" => [1, 20],
+        "tds" => [1, 10],
         "gh" => [1, 5],
     ];
 
@@ -65,9 +65,19 @@ class ModifySensorsData extends Command
 
 		$oldValue = $sensor[$paramToModify];
         if ($sign === "+") {
-            $sensor[$paramToModify] += $this->random_float($limit[0], $limit[1]);
+			if($paramToModify) {
+				$sensor[$paramToModify] += rand($limit[0], $limit[1]);
+			}
+			else {
+				$sensor[$paramToModify] += $this->random_float($limit[0], $limit[1]);
+			}
         } else {
-            $sensor[$paramToModify] -= $this->random_float($limit[0], $limit[1]);
+			if($paramToModify) {
+				$sensor[$paramToModify] -= rand($limit[0], $limit[1]);
+			}
+			else {
+				$sensor[$paramToModify] -= $this->random_float($limit[0], $limit[1]);
+			}
             $sensor[$paramToModify] = $sensor[$paramToModify] > 0 ? $sensor[$paramToModify] : 0;
 		}
 		$newValue = $sensor[$paramToModify];

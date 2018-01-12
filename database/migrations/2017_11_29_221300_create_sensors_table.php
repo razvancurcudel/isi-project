@@ -24,7 +24,7 @@ class CreateSensorsTable extends Migration
             $table->float('conductivity', 5, 2);
             $table->float('salinity', 5, 2);
             $table->float('turbidity', 5, 2);
-            $table->float('tds', 5, 2);
+            $table->integer('tds');
 			$table->float('gh', 5, 2);
             $table->timestamp("update_timestamp")->nullable();
         });
