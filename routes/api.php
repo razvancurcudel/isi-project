@@ -35,7 +35,7 @@ Route::group([
 
     Route::get('alerts', '\App\Http\Controllers\AlertsController@index');
     Route::post('alerts/create', '\App\Http\Controllers\AlertsController@create');
-    Route::get('sensors/{id}', '\App\Http\Controllers\SensorsController@show');
+    Route::get('sensors/{id}/{parameter}', '\App\Http\Controllers\SensorsController@show')->where(['id' => '[0-9]+', 'name' => '[a-z]+']);
 	Route::get('sensors', '\App\Http\Controllers\SensorsController@index');
 });
 

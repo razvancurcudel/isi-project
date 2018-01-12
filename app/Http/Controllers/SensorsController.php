@@ -7,12 +7,12 @@ use Illuminate\Http\Request;
 
 class SensorsController extends Controller
 {
-    function show(int $id)
+    function show(int $id, string $parameter)
     {
         $sensors = Sensor::where("identifier", "=", $id)
             ->orderBy("update_timestamp")
-            ->take(10)
-            ->get();
+			->take(10)
+			->get(["update_timestamp",$parameter]);
 
         return $sensors;
     }
