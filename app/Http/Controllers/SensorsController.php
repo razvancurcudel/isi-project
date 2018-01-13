@@ -10,7 +10,7 @@ class SensorsController extends Controller
     function show(int $id, string $parameter)
     {
         $sensors = Sensor::where("identifier", "=", $id)
-            ->orderBy("update_timestamp")
+            ->orderBy("update_timestamp", "DESC")
 			->take(10)
 			->get(["update_timestamp",$parameter]);
 
