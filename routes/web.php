@@ -11,8 +11,12 @@
 |
 */
 
+use App\Alert;
+
 Route::get('/', function () {
-    return view('welcome');
+	$alert = Alert::where('id', 1)->first();
+
+    return view('emails.test')->with('alert', $alert);
 });
 
 
